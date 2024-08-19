@@ -1,0 +1,79 @@
+.product-detail {
+  display: flex;
+  padding: 30px;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin: 20px auto;
+  max-width: 900px;
+}
+
+.product-detail img {
+  max-width: 350px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.product-info {
+  max-width: 500px;
+  margin-left: 20px;
+}
+
+.product-info h1 {
+  margin-bottom: 15px;
+  font-size: 2rem;
+  color: #333;
+}
+
+.product-info p {
+  margin-bottom: 15px;
+  line-height: 1.5;
+}
+
+.product-info p.price {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #d9534f;
+}
+
+.quantity-control {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.quantity-control button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 15px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  margin: 0 5px;
+  transition: background-color 0.3s ease;
+}
+
+.quantity-control button:hover {
+  background-color: #0056b3;
+}
+
+.quantity-control span {
+  font-size: 1.2rem;
+  margin: 0 10px;
+}
+
+.product-info button {
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 15px 20px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.product-info button:hover {
+  background-color: #218838;
+}

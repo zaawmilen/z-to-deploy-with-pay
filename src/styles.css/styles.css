@@ -1,0 +1,46 @@
+/* styles.css */
+
+/* Reset some default browser styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Body styling */
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f3f3f3;
+    color: #333;
+  }
+  
+  /* Main content area */
+  main {
+    padding: 20px;
+  }
+  
+  /* Links */
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+  
+  /* Buttons */
+  button {
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  /* Flex utilities */
+  .flex {
+    display: flex;
+  }
+  
+  .justify-center {
+    justify-content: center;
+  }
+  
+  .align-center {
+    align-items: center;
+  }
+  

@@ -1,0 +1,47 @@
+.product {
+  border: 1px solid #ddd;
+  padding: 10px;
+  max-width: 200px;
+}
+
+.product img {
+  width: 100%;
+  height: auto;
+}
+
+.product-info {
+  text-align: center;
+}
+
+.product-info p {
+  margin: 10px 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* .product-detail {
+    display: flex;
+    padding: 20px;
+  }
+  
+  .product-detail img {
+    max-width: 300px;
+    margin-right: 20px;
+  }
+  
+  .details {
+    flex: 1;
+  }
+   */
