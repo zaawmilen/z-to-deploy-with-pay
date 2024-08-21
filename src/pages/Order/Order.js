@@ -8,6 +8,7 @@ const Order = () => {
   const navigate = useNavigate();
 
   const handlePlaceOrder = () => {
+    console.log('Placing order...');
     localStorage.setItem('orderItems', JSON.stringify(state.cart));
     navigate('/checkout');
   };

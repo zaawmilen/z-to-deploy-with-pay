@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { auth, createUserWithEmailAndPassword } from '../../utils/firebase';
+import { auth } from '../../utils/firebase'; // Import the auth object
+import { createUserWithEmailAndPassword } from 'firebase/auth'; // Import the function
 import './AuthForm.css';
 
 const CreateAccount = () => {

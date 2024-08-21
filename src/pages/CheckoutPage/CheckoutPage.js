@@ -2,6 +2,7 @@ import { loadStripe } from '@stripe/stripe-js';
 import { Elements } from '@stripe/react-stripe-js';
 import { useState, useEffect } from 'react';
 import CheckoutForm from './CheckoutForm';
+import createPaymentIntent from './createPaymentIntent'; // Import the new function
 import './Checkoutpage.css'; // Import the CSS file
 
 // Load Stripe with your publishable key
@@ -11,24 +12,16 @@ const CheckoutPage = () => {
   const [clientSecret, setClientSecret] = useState('');
 
   useEffect(() => {
-    const fetchCartTotal = () => {
-      const cartItems = JSON.parse(localStorage.getItem('orderItems')) || [];
-      const totalAmount = cartItems.reduce((total, item) => total + item.price * item.quantity, 0);
-      return totalAmount; // Amount in dollars
+    console.log('CheckoutPage rendered');
+    const fetchCartItems = () => {
+      return JSON.parse(localStorage.getItem('orderItems')) || [];
     };
 
     const handleCreatePaymentIntent = async () => {
       try {
-        const amount = fetchCartTotal(); // amount in dollars
-        const response = await fetch('http://localhost:5000/create-payment-intent', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify({ items: JSON.parse(localStorage.getItem('orderItems')) }),
-        });
-        const { clientSecret } = await response.json();
-        setClientSecret(clientSecret);
+        const items = fetchCartItems(); // Get the cart items from localStorage
+        const clientSecret = await createPaymentIntent(items); // Create payment intent
+        setClientSecret(clientSecret); // Set the client secret
       } catch (error) {
         console.error('Error creating payment intent:', error);
       }

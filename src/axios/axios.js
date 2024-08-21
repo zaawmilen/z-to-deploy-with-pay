@@ -1,11 +1,14 @@
 import axios from 'axios';
 
-// Replace with your Firebase Cloud Function URL
-const createPaymentIntentUrl = 'https://<YOUR_REGION>-<YOUR_PROJECT_ID>.cloudfunctions.net/createPaymentIntent';
+// Replace with your local backend URL
+const createPaymentIntentUrl = 'http://localhost:5000/create-payment-intent';
 
-const createPaymentIntent = async (amount) => {
+const createPaymentIntent = async (items) => {
   try {
-    const response = await axios.post(createPaymentIntentUrl, { amount });
+    // Send the array of items to your backend
+    const response = await axios.post(createPaymentIntentUrl, { items });
+
+    // Return the client secret received from the backend
     return response.data.clientSecret;
   } catch (error) {
     console.error('Error creating payment intent:', error);
