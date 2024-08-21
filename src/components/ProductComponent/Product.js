@@ -1,13 +1,16 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import { FaShoppingCart } from 'react-icons/fa';
-import { DataContext } from '../../contexts/DataProvider';
+import { useDataContext } from '../../contexts/DataProvider';
 import CurrencyFormat from '../CurrencyFormat/CurrencyFormat';
 import './Product.css'; // Regular CSS import
 
 const Product = ({ product }) => {
-  const { addToCart } = useContext(DataContext);
+  const { addToCart } = useDataContext();
 
+  const handleAddToCart = () => {
+    addToCart(product);
+  };
   return (
     <div className="product"> {/* Use class names directly */}
       <Link to={`/product/${product.id}`}>
@@ -17,7 +20,7 @@ const Product = ({ product }) => {
           <CurrencyFormat value={product.price} />
         </div>
       </Link>
-      <button onClick={() => addToCart(product)}><FaShoppingCart /> Add to Cart</button>
+      <button onClick={handleAddToCart}><FaShoppingCart /> Add to Cart</button>
     </div>
   );
 };

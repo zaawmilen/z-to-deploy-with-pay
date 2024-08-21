@@ -61,10 +61,11 @@ const DataProvider = ({ children }) => {
   }, []);
  // Define the addToCart function
  const addToCart = (product) => {
+  console.log('Adding to cart:', product); 
   dispatch({ type: 'ADD_TO_CART', payload: product });
 };
   return (
-    <DataContext.Provider value={{ state, dispatch }}>
+    <DataContext.Provider value={{ state, dispatch, addToCart }}>
       {children}
     </DataContext.Provider>
   );
