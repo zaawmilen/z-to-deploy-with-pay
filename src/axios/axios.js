@@ -1,8 +1,8 @@
 import axios from 'axios';
 
 // Replace with your local backend URL
-// const createPaymentIntentUrl = 'http://localhost:5000/create-payment-intent';
-const createPaymentIntentUrl ='https://render.com/docs/node-version';
+const createPaymentIntentUrl = 'http://localhost:5000/create-payment-intent';
+// const createPaymentIntentUrl ='https://render.com/docs/node-version';
 const createPaymentIntent = async (items) => {
   try {
     // Send the array of items to your backend
